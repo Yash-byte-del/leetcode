@@ -8,9 +8,8 @@ public:
             for(int j = 0; j<9; j++) {
                 if(board[i][j] == '.') continue;
                 
-                int digit     = board[i][j] - '0' - 1; //(-1 to avoid overflow in index)
+                int digit     = board[i][j] - '0' - 1;
                 
-                //we have numbered 9 boxes of (3*3) as 0, 1, 2, 3, 4 ... 9 (see the diagram below)
                 int boxIndex  = (i/3)*3 + (j/3);
                 
                 if(row[i][digit] || col[j][digit] || box[boxIndex][digit]) return false;
